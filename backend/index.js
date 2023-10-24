@@ -21,15 +21,14 @@ mongoose
 
 const app = express();
 app.use(express.json());
-
-app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type']
-}));
+app.use(cors());
+// app.use(cors({
+//     origin: 'http://localhost:3000',
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type']
+// }));
 
 // Middleware for handling CORS Policy
-app.use(cors());
 
 app.use('/books', booksRoutes);
 
